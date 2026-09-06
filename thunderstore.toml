@@ -9,18 +9,19 @@
 # documentation of the namespace/team decision, and update it (or delete it) once a real
 # `tcli init`/`tcli publish --help` has been checked against tcli's current version.
 #
-# "OrionMods" is a PLACEHOLDER team name — Matt has not created it yet. Thunderstore package
-# namespace == team name, and both package name and namespace are immutable once the first
-# version is uploaded (wiki.thunderstore.io/mods/updating-a-package). Confirm/rename this
-# before the first `tcli publish`. See PUBLISHING.md step (c).
+# Thunderstore team/namespace: "Noseferatu" (FINAL, decided 2026-09-06). The team itself has not
+# been created on Thunderstore yet. Package namespace == team name, and both the package name and
+# the namespace are immutable once the first version is uploaded
+# (wiki.thunderstore.io/mods/updating-a-package) — create the team before the first
+# `tcli publish`. See PUBLISHING.md step (c).
 
 [package]
-namespace = "OrionMods"  # UNVERIFIED placeholder — confirm the real team name before first publish
-name = "OrionQoL"        # second package (OrionNet) needs its own toml/zip; this file documents OrionQoL's
+namespace = "Noseferatu"
+name = "NoVikingLeftBehind"   # second package (SmoothServer) needs its own toml/zip; this file documents NoVikingLeftBehind
 
 [build]
-icon = "thunderstore/OrionQoL/icon.png"
-readme = "thunderstore/OrionQoL/README.md"
+icon = "thunderstore/NoVikingLeftBehind/icon.png"
+readme = "thunderstore/NoVikingLeftBehind/README.md"
 
 [publish]
 repository = "https://thunderstore.io"

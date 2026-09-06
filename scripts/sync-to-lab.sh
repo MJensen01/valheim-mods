@@ -27,4 +27,4 @@ rsync -avz --delete \
   --exclude 'obj/' \
   "$REPO_ROOT/src/" "$REMOTE_HOST:$REMOTE_PATH/"
 
-echo "Done. On $REMOTE_HOST: cd /opt/modlab && ./build.sh src/OrionQoL && ./build.sh src/OrionNet"
+echo "Done. On $REMOTE_HOST: cd /opt/modlab && ./build.sh src/NoVikingLeftBehind && ./build.sh src/SmoothServer"

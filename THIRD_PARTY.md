@@ -2,16 +2,30 @@
 
 ## Vendored source
 
-### ServerSync (`src/OrionQoL/Vendor/ServerSync.cs`)
+### ServerSync (`src/NoVikingLeftBehind/Vendor/ServerSync.cs`)
 
 - Author: **blaxxun-boop**
 - Source: https://github.com/blaxxun-boop/ServerSync
 - Commit vendored: `c57c2aa54e07cdcc7630d6068699ea781622323e` (2025-04-06)
 - License: **MIT-0** (MIT No Attribution) — full text in
-  `src/OrionQoL/Vendor/ServerSync-LICENSE.txt`
+  `src/NoVikingLeftBehind/Vendor/ServerSync-LICENSE.txt`
 - Not modified. Vendored as source (rather than built as a separate DLL and merged) so it
-  compiles cleanly in the same headless build pipeline as the rest of OrionQoL. Do not edit
+  compiles cleanly in the same headless build pipeline as the rest of NoVikingLeftBehind. Do not edit
   this file directly — re-copy from upstream if it needs to change, so it stays diffable.
+
+## Adapted code
+
+### AzuCraftyBoxes
+
+- Author: **Azumatt**
+- Source: https://github.com/AzumattDev/AzuCraftyBoxes
+- License: **MIT-0** (MIT No Attribution)
+- NoVikingLeftBehind's `CraftFromChests` module (`src/NoVikingLeftBehind/Modules/Chests/`) adapts
+  AzuCraftyBoxes' approach to pulling crafting materials out of nearby containers — container
+  discovery/ownership handling and the inventory-requirement patch points in particular. The code
+  was re-written against this mod's `FeatureModule` contract rather than copied wholesale, but it
+  is close enough in structure that it is credited here as adapted code, not merely as an idea.
+  MIT-0 requires no attribution; this entry is voluntary.
 
 ## Credited ideas (no code copied)
 
@@ -20,12 +34,12 @@
 - Author: **CW_Jesse** (CW-Jesse)
 - Source: https://github.com/CW-Jesse/valheim-betternetworking
 - License: MIT
-- OrionNet's `SendCadence`/`SendBudget`/`CreateBudget` modules address the same class of
+- SmoothServer's `SendCadence`/`SendBudget`/`CreateBudget` modules address the same class of
   problem (ZDO send-rate/throughput) as BetterNetworking's "Update Rate" and Steamworks
   send-rate tuning, implemented independently (Harmony prefix/transpiler against the
   0.221.12 decompile). No BetterNetworking source is included in this repository.
-- Note: while OrionNet's `SendCadence` module is enabled, BetterNetworking's own "Update Rate"
-  option becomes inert (OrionNet's patch runs at higher Harmony priority and returns before
+- Note: while SmoothServer's `SendCadence` module is enabled, BetterNetworking's own "Update Rate"
+  option becomes inert (SmoothServer's patch runs at higher Harmony priority and returns before
   BetterNetworking's runs) — its Steamworks send-rate patch is unaffected and still applies.
   Server owners running both should be aware of this overlap.
 

@@ -31,7 +31,7 @@ jobs:
       # UNVERIFIED: tcli's exact publish flags. BUILD-PIPELINE.md (research/BUILD-PIPELINE.md §3)
       # found a real-world example that just does `tcli publish --file X --package-version Y`
       # with TCLI_AUTH_TOKEN in the environment, targeting a repo that only ships one package.
-      # This repo ships two (OrionQoL + OrionNet); confirm against `tcli publish --help` (and
+      # This repo ships two (NoVikingLeftBehind + SmoothServer); confirm against `tcli publish --help` (and
       # whether namespace/name need to be passed explicitly or are read from manifest.json
       # inside the zip) before relying on this for a real release — see PUBLISHING.md.
       - name: Publish to Thunderstore
@@ -42,7 +42,7 @@ jobs:
           dotnet tool install -g tcli
           export PATH="$PATH:$HOME/.dotnet/tools"
           for zip in dist/*.zip; do
-            base="$(basename "$zip" .zip)"      # e.g. OrionQoL-0.2.0
+            base="$(basename "$zip" .zip)"      # e.g. NoVikingLeftBehind-0.2.0
             version="${base##*-}"               # e.g. 0.2.0
             echo "Publishing $zip (version $version)"
             tcli publish --file "$zip" --package-version "$version"

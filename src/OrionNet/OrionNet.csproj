@@ -1,9 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <AssemblyName>OrionNet</AssemblyName>
-    <RootNamespace>OrionNet</RootNamespace>
-    <Version>0.1.0</Version>
-    <OutputPath>bin/</OutputPath>
-    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-  </PropertyGroup>
-</Project>

@@ -41,13 +41,13 @@
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
     <!-- Rewrites referenced game assemblies so private/internal members are visible
          (Publicize="true" below). Keep this — several modules patch private methods/fields
-         (see src/OrionQoL/Modules/**, src/OrionNet/*Module.cs) and rely on it at compile time. -->
+         (see src/NoVikingLeftBehind/Modules/**, src/SmoothServer/*Module.cs) and rely on it at compile time. -->
     <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.1" PrivateAssets="all" />
   </ItemGroup>
 
   <!-- Shared game / BepInEx references. A project can opt out with <SkipValheimRefs>true</SkipValheimRefs>
        set in its own .csproj BEFORE this file would otherwise apply (i.e. it only matters for
-       projects added later; both OrionQoL and OrionNet use these refs). -->
+       projects added later; both NoVikingLeftBehind and SmoothServer use these refs). -->
   <ItemGroup Condition="'$(SkipValheimRefs)' != 'true'">
     <Reference Include="assembly_valheim">
       <HintPath>$(ValheimManagedDir)/assembly_valheim.dll</HintPath>

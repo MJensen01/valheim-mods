@@ -48,7 +48,7 @@ jobs:
 
           MANAGED="depot-cache/valheim_server_Data/Managed"
           # Every reference src/Directory.Build.props asks for. UNVERIFIED: Unity.TextMeshPro
-          # (needed by OrionQoL's ServerSync popup) has not been confirmed present in the
+          # (needed by NoVikingLeftBehind's ServerSync popup) has not been confirmed present in the
           # DEDICATED SERVER Managed dir specifically (only observed in the box lab, which
           # mounts the same tree) — if this cp fails, pull it from the Windows/client depot
           # (1004) instead and adjust this step.
@@ -62,11 +62,11 @@ jobs:
 
           rm -rf depot-cache dd.zip dd bie.zip bie
 
-      - name: Build OrionQoL
-        run: dotnet build src/OrionQoL -c Release -p:ValheimManagedDir="${{ github.workspace }}/lib" -p:BepInExCoreDir="${{ github.workspace }}/lib"
+      - name: Build NoVikingLeftBehind
+        run: dotnet build src/NoVikingLeftBehind -c Release -p:ValheimManagedDir="${{ github.workspace }}/lib" -p:BepInExCoreDir="${{ github.workspace }}/lib"
 
-      - name: Build OrionNet
-        run: dotnet build src/OrionNet -c Release -p:ValheimManagedDir="${{ github.workspace }}/lib" -p:BepInExCoreDir="${{ github.workspace }}/lib"
+      - name: Build SmoothServer
+        run: dotnet build src/SmoothServer -c Release -p:ValheimManagedDir="${{ github.workspace }}/lib" -p:BepInExCoreDir="${{ github.workspace }}/lib"
 
       - name: Assemble Thunderstore packages
         run: python3 scripts/package.py

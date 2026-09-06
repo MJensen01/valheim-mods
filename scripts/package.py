@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build Thunderstore/r2modman-style zips for OrionQoL and OrionNet from already-built DLLs.
+"""Build Thunderstore/r2modman-style zips for NoVikingLeftBehind and SmoothServer from already-built DLLs.
 
 Adapted from the box lab's `/opt/modlab/package.py` (which generated its own placeholder PNG
 icons at build time). This version reads the real icon/README/CHANGELOG/manifest that live in
@@ -22,14 +22,14 @@ DIST = os.path.join(REPO_ROOT, "dist")
 
 MODS = [
     {
-        "name": "OrionQoL",
-        "src_dir": os.path.join(REPO_ROOT, "src", "OrionQoL"),
-        "ts_dir": os.path.join(REPO_ROOT, "thunderstore", "OrionQoL"),
+        "name": "NoVikingLeftBehind",
+        "src_dir": os.path.join(REPO_ROOT, "src", "NoVikingLeftBehind"),
+        "ts_dir": os.path.join(REPO_ROOT, "thunderstore", "NoVikingLeftBehind"),
     },
     {
-        "name": "OrionNet",
-        "src_dir": os.path.join(REPO_ROOT, "src", "OrionNet"),
-        "ts_dir": os.path.join(REPO_ROOT, "thunderstore", "OrionNet"),
+        "name": "SmoothServer",
+        "src_dir": os.path.join(REPO_ROOT, "src", "SmoothServer"),
+        "ts_dir": os.path.join(REPO_ROOT, "thunderstore", "SmoothServer"),
     },
 ]
 

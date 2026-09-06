@@ -1,9 +1,0 @@
-{
-  "name": "OrionQoL",
-  "version_number": "0.2.0",
-  "website_url": "https://github.com/OrionMods/orion-valheim",
-  "description": "Server-enforced QoL and catch-up mechanics: frontier-based discounts, ore regrowth, a vanguard buff, and playtime/skill catch-up. One DLL, server + client.",
-  "dependencies": [
-    "denikson-BepInExPack_Valheim-5.4.2333"
-  ]
-}
