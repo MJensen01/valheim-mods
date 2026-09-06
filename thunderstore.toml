@@ -1,0 +1,30 @@
+# Thunderstore CLI (tcli) config — reference only.
+#
+# UNVERIFIED: this schema is pieced together from the tcli wiki summary
+# (github.com/thunderstore-io/thunderstore-cli/wiki), not confirmed against `tcli config --help`
+# or a real `tcli init` run (no Thunderstore account/token exists yet — see PUBLISHING.md).
+# release.yml does NOT rely on this file being parsed; it assembles each zip itself and calls
+# `tcli publish --file dist/<Name>-<version>.zip --package-version <version>` with explicit
+# flags/env, which BUILD-PIPELINE.md's research flagged as the safer bet. Treat this file as
+# documentation of the namespace/team decision, and update it (or delete it) once a real
+# `tcli init`/`tcli publish --help` has been checked against tcli's current version.
+#
+# "OrionMods" is a PLACEHOLDER team name — Matt has not created it yet. Thunderstore package
+# namespace == team name, and both package name and namespace are immutable once the first
+# version is uploaded (wiki.thunderstore.io/mods/updating-a-package). Confirm/rename this
+# before the first `tcli publish`. See PUBLISHING.md step (c).
+
+[package]
+namespace = "OrionMods"  # UNVERIFIED placeholder — confirm the real team name before first publish
+name = "OrionQoL"        # second package (OrionNet) needs its own toml/zip; this file documents OrionQoL's
+
+[build]
+icon = "thunderstore/OrionQoL/icon.png"
+readme = "thunderstore/OrionQoL/README.md"
+
+[publish]
+repository = "https://thunderstore.io"
+communities = ["valheim"]
+
+[publish.categories]
+valheim = ["Server-side"]
