@@ -32,7 +32,7 @@ jobs:
           path: lib/
           key: gamelibs-${{ steps.buildid.outputs.buildid }}
 
-      # DepotDownloader: anonymous Steam login, app 896660 depot 1006 (Linux dedicated server).
+      # DepotDownloader: anonymous Steam login, app 896660 depot 896661 (Linux dedicated server CONTENT; 1004/1005/1006 are only the Steam runtime redist — first CI run proved that).
       # Verified in BUILD-PIPELINE.md §2 this session; re-check `-branch` / auth requirements
       # around the 1.0 launch (2026-09-09) per that doc's caveats.
       - name: Fetch game assemblies + BepInEx core
@@ -44,7 +44,7 @@ jobs:
           curl -sL https://github.com/SteamRE/DepotDownloader/releases/latest/download/DepotDownloader-linux-x64.zip -o dd.zip
           unzip -q dd.zip -d dd
           chmod +x dd/DepotDownloader
-          ./dd/DepotDownloader -app 896660 -depot 1006 -os linux -dir ./depot-cache -validate
+          ./dd/DepotDownloader -app 896660 -depot 896661 -os linux -dir ./depot-cache -validate
 
           MANAGED="depot-cache/valheim_server_Data/Managed"
           # Every reference src/Directory.Build.props asks for. UNVERIFIED: Unity.TextMeshPro
