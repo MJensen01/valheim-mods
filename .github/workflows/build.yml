@@ -52,7 +52,8 @@ jobs:
           # DEDICATED SERVER Managed dir specifically (only observed in the box lab, which
           # mounts the same tree) — if this cp fails, pull it from the Windows/client depot
           # (1004) instead and adjust this step.
-          cp "$MANAGED"/{assembly_valheim,assembly_utils,assembly_guiutils,assembly_postprocessing,assembly_steamworks,assembly_googleanalytics}.dll lib/
+          cp "$MANAGED"/{assembly_valheim,assembly_utils,assembly_guiutils,assembly_postprocessing,assembly_googleanalytics}.dll lib/
+          cp "$MANAGED"/com.rlabrecque.steamworks.net.dll lib/
           cp "$MANAGED"/UnityEngine{,.CoreModule,.PhysicsModule,.AnimationModule,.IMGUIModule,.InputLegacyModule,.UI,.UIModule,.UnityWebRequestModule}.dll lib/
           cp "$MANAGED"/Unity.TextMeshPro.dll lib/
 
