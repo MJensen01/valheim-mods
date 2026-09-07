@@ -5,7 +5,7 @@ on **every client** (r2modman: Settings > Import local mod, or search "NoVikingL
 listed here). Clients without a matching version are rejected while the server has
 `EnforceClientMod = true`.
 
-Every number lives in the server's `Noseferatu.NoVikingLeftBehind.cfg`; clients receive it on connect
+Every number lives in the server's `Nosferatu.NoVikingLeftBehind.cfg`; clients receive it on connect
 via [ServerSync](https://github.com/blaxxun-boop/ServerSync) (MIT-0, blaxxun-boop).
 
 ## Modules (each has its own `Enabled` toggle)

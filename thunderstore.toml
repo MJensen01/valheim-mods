@@ -3,14 +3,14 @@
 # explicitly by release.yml per zip (two packages share this file). Categories are left unset on purpose —
 # set them on the Thunderstore website after the first upload (editable any time; names are not).
 #
-# Thunderstore team/namespace: "Noseferatu" (FINAL, decided 2026-09-06). The team itself has not
+# Thunderstore team/namespace: "Nosferatu" (FINAL, decided 2026-09-06). The team itself has not
 # been created on Thunderstore yet. Package namespace == team name, and both the package name and
 # the namespace are immutable once the first version is uploaded
 # (wiki.thunderstore.io/mods/updating-a-package) — create the team before the first
 # `tcli publish`. See PUBLISHING.md step (c).
 
 [package]
-namespace = "Noseferatu"
+namespace = "Nosferatu"
 name = "NoVikingLeftBehind"   # second package (SmoothServer) needs its own toml/zip; this file documents NoVikingLeftBehind
 
 [build]

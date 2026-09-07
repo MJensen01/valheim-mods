@@ -1,4 +1,4 @@
-# Noseferatu Valheim Mods
+# Nosferatu Valheim Mods
 
 Two BepInEx 5 mods for Valheim 0.221.12, built and maintained for a small dedicated-server
 group and released here for anyone to use. MIT licensed.
@@ -27,8 +27,8 @@ Both are pre-release (see version plan below) and were built and tested against 
    into `BepInEx/plugins/SmoothServer/` if you want the networking tuning). Both depend on
    [BepInExPack_Valheim](https://valheim.thunderstore.io/package/denikson/BepInExPack_Valheim/)
    5.4.2333.
-2. Start the server once to generate `BepInEx/config/Noseferatu.NoVikingLeftBehind.cfg` and
-   `Noseferatu.SmoothServer.cfg`, then edit the values you want (see below). NoVikingLeftBehind's synced
+2. Start the server once to generate `BepInEx/config/Nosferatu.NoVikingLeftBehind.cfg` and
+   `Nosferatu.SmoothServer.cfg`, then edit the values you want (see below). NoVikingLeftBehind's synced
    settings are pushed to every connecting client automatically.
 3. Players only need to install NoVikingLeftBehind (not SmoothServer) client-side.
 
@@ -98,12 +98,12 @@ python scripts\package.py   # builds thunderstore/dist zips
   Mining, Fires, Portals and Chests modules plus live config reload).
 - `SmoothServer` — currently `0.2.0` (renamed from `OrionNet`; adds live config reload).
 
-Names and the Thunderstore namespace are **final**: package namespace/team `Noseferatu`, packages
+Names and the Thunderstore namespace are **final**: package namespace/team `Nosferatu`, packages
 `NoVikingLeftBehind` and `SmoothServer`. Both are immutable once the first version is uploaded —
 see `PUBLISHING.md` (in the parent `Valheim/` folder, not part of this repo) for the upload steps.
 
 **Upgrading from OrionQoL/OrionNet:** the plugin GUIDs and config file names changed, so the
-server generates fresh `Noseferatu.NoVikingLeftBehind.cfg` / `Noseferatu.SmoothServer.cfg` with
+server generates fresh `Nosferatu.NoVikingLeftBehind.cfg` / `Nosferatu.SmoothServer.cfg` with
 defaults on first boot — copy your old values across, delete the old `net.mjensen.orion.*.cfg`
 files and the old plugin folders, and note that the catch-up data directory moved from
 `BepInEx/config/orion/` to `BepInEx/config/nvlb/`.

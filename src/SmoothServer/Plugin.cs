@@ -11,7 +11,7 @@ namespace SmoothServer
     [BepInPlugin(PluginGuid, PluginName, PluginVersion)]
     public class SmoothServerPlugin : BaseUnityPlugin
     {
-        public const string PluginGuid = "Noseferatu.SmoothServer";
+        public const string PluginGuid = "Nosferatu.SmoothServer";
         public const string PluginName = "SmoothServer";
         public const string PluginVersion = "0.2.0";
 
@@ -58,7 +58,7 @@ namespace SmoothServer
                 _bootstrap.Patch(znetStart,
                     postfix: new HarmonyMethod(typeof(SmoothServerPlugin), nameof(ZNetStartPostfix)));
 
-            // Live config reload: watches Noseferatu.SmoothServer.cfg on disk and calls
+            // Live config reload: watches Nosferatu.SmoothServer.cfg on disk and calls
             // Config.Reload() (debounced, on the main thread via Update()) so edits on a
             // running server take effect without a restart. See ConfigWatcher.cs.
             _configWatcher = new ConfigWatcher(Cfg, Log, "[Config]");

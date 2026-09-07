@@ -1,8 +1,8 @@
 # Changelog — NoVikingLeftBehind
 
 ## 0.3.0 (2026-09-06)
-- **Renamed** from `OrionQoL`. New plugin GUID `Noseferatu.NoVikingLeftBehind`, new config file
-  `Noseferatu.NoVikingLeftBehind.cfg`, new console command `nvlb.status`, log source `NVLB`.
+- **Renamed** from `OrionQoL`. New plugin GUID `Nosferatu.NoVikingLeftBehind`, new config file
+  `Nosferatu.NoVikingLeftBehind.cfg`, new console command `nvlb.status`, log source `NVLB`.
   Old `net.mjensen.orion.qol.cfg` settings are **not** migrated — re-apply them once.
 - Ten new modules: `CombatRecharge`, `CraftFromChests`, `DualPowers`, `FastMining`,
   `FoodNoDecay`, `LongFires`, `PortalTrail`, plus the `ChestsSelfTest`, `EconomySelfTest` and

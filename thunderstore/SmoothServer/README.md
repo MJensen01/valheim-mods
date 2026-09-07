@@ -17,7 +17,7 @@ Server-only networking tuning for Valheim dedicated servers. Drop `SmoothServer.
 - **CreateBudget** — objects created per frame, exposed as config (default matches vanilla,
   i.e. a no-op until raised).
 
-Config: `Noseferatu.SmoothServer.cfg` in the server's `BepInEx/config/`.
+Config: `Nosferatu.SmoothServer.cfg` in the server's `BepInEx/config/`.
 
 ## Dependencies
 

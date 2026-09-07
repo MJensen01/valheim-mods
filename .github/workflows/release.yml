@@ -53,7 +53,7 @@ jobs:
           schemaVersion = "0.0.1"
 
           [package]
-          namespace = "Noseferatu"
+          namespace = "Nosferatu"
           name = "$name"
           versionNumber = "$version"
           description = "see manifest.json"

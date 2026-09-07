@@ -24,7 +24,7 @@ namespace NoVikingLeftBehind
     [BepInPlugin(PluginGuid, PluginName, PluginVersion)]
     public class NoVikingLeftBehindPlugin : BaseUnityPlugin
     {
-        public const string PluginGuid = "Noseferatu.NoVikingLeftBehind";
+        public const string PluginGuid = "Nosferatu.NoVikingLeftBehind";
         public const string PluginName = "NoVikingLeftBehind";
         public const string PluginVersion = "0.3.0";
 
@@ -118,7 +118,7 @@ namespace NoVikingLeftBehind
                 _bootstrap.Patch(znetStart,
                     postfix: new HarmonyMethod(typeof(NoVikingLeftBehindPlugin), nameof(ZNetStartPostfix)));
 
-            // Live config reload: watches Noseferatu.NoVikingLeftBehind.cfg on disk and calls
+            // Live config reload: watches Nosferatu.NoVikingLeftBehind.cfg on disk and calls
             // Config.Reload() (debounced, on the main thread via Update()) so edits on a
             // running server take effect without a restart. See ConfigWatcher.cs.
             _configWatcher = new ConfigWatcher(Cfg, Log, "[Config]");
