@@ -1,13 +1,7 @@
-# Thunderstore CLI (tcli) config — reference only.
-#
-# UNVERIFIED: this schema is pieced together from the tcli wiki summary
-# (github.com/thunderstore-io/thunderstore-cli/wiki), not confirmed against `tcli config --help`
-# or a real `tcli init` run (no Thunderstore account/token exists yet — see PUBLISHING.md).
-# release.yml does NOT rely on this file being parsed; it assembles each zip itself and calls
-# `tcli publish --file dist/<Name>-<version>.zip --package-version <version>` with explicit
-# flags/env, which BUILD-PIPELINE.md's research flagged as the safer bet. Treat this file as
-# documentation of the namespace/team decision, and update it (or delete it) once a real
-# `tcli init`/`tcli publish --help` has been checked against tcli's current version.
+# Thunderstore CLI (tcli) config. Verified 2026-09-06 against the tcli wiki: [general]/[publish] keys
+# (repository, communities, categories) are read by `tcli publish`; namespace/name/version are passed
+# explicitly by release.yml per zip (two packages share this file). Categories are left unset on purpose —
+# set them on the Thunderstore website after the first upload (editable any time; names are not).
 #
 # Thunderstore team/namespace: "Noseferatu" (FINAL, decided 2026-09-06). The team itself has not
 # been created on Thunderstore yet. Package namespace == team name, and both the package name and
@@ -26,6 +20,3 @@ readme = "thunderstore/NoVikingLeftBehind/README.md"
 [publish]
 repository = "https://thunderstore.io"
 communities = ["valheim"]
-
-[publish.categories]
-valheim = ["Server-side"]

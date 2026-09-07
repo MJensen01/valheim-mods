@@ -28,12 +28,9 @@ jobs:
             --title "${{ github.ref_name }}" \
             --generate-notes
 
-      # UNVERIFIED: tcli's exact publish flags. BUILD-PIPELINE.md (research/BUILD-PIPELINE.md §3)
-      # found a real-world example that just does `tcli publish --file X --package-version Y`
-      # with TCLI_AUTH_TOKEN in the environment, targeting a repo that only ships one package.
-      # This repo ships two (NoVikingLeftBehind + SmoothServer); confirm against `tcli publish --help` (and
-      # whether namespace/name need to be passed explicitly or are read from manifest.json
-      # inside the zip) before relying on this for a real release — see PUBLISHING.md.
+      # Verified 2026-09-06 against the tcli wiki (github.com/thunderstore-io/thunderstore-cli/wiki):
+      # token = env TCLI_AUTH_TOKEN (or --token); `publish --file` takes --package-namespace/--package-name/
+      # --package-version explicitly, so two packages can share one thunderstore.toml (repository + communities).
       - name: Publish to Thunderstore
         env:
           TCLI_AUTH_TOKEN: ${{ secrets.TCLI_AUTH_TOKEN }}
@@ -44,6 +41,7 @@ jobs:
           for zip in dist/*.zip; do
             base="$(basename "$zip" .zip)"      # e.g. NoVikingLeftBehind-0.2.0
             version="${base##*-}"               # e.g. 0.2.0
+            name="${base%-*}"                   # e.g. NoVikingLeftBehind
             echo "Publishing $zip (version $version)"
-            tcli publish --file "$zip" --package-version "$version"
+            tcli publish --file "$zip" --package-namespace Noseferatu --package-name "$name" --package-version "$version"
           done
