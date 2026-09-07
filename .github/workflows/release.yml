@@ -1,5 +1,8 @@
 name: release
 
+permissions:
+  contents: write   # gh release create needs write; the default GITHUB_TOKEN is read-only on new repos
+
 on:
   push:
     tags: ['v*']
