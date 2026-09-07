@@ -42,9 +42,33 @@ jobs:
           dotnet tool install -g tcli
           export PATH="$PATH:$HOME/.dotnet/tools"
           for zip in dist/*.zip; do
-            base="$(basename "$zip" .zip)"      # e.g. NoVikingLeftBehind-0.2.0
-            version="${base##*-}"               # e.g. 0.2.0
+            base="$(basename "$zip" .zip)"      # e.g. NoVikingLeftBehind-0.3.0
+            version="${base##*-}"               # e.g. 0.3.0
             name="${base%-*}"                   # e.g. NoVikingLeftBehind
-            echo "Publishing $zip (version $version)"
-            tcli publish --file "$zip" --package-namespace Noseferatu --package-name "$name" --package-version "$version"
+            echo "Publishing $zip ($name $version)"
+            # tcli: --file cannot be combined with --package-* flags (they are read from the config),
+            # so write a per-package config. Description/website come from the zip's manifest.json.
+            cat > "tcli-$name.toml" <<EOF
+          [config]
+          schemaVersion = "0.0.1"
+
+          [package]
+          namespace = "Noseferatu"
+          name = "$name"
+          versionNumber = "$version"
+          description = "see manifest.json"
+          websiteUrl = "https://github.com/MJensen01/valheim-mods"
+          containsNsfwContent = false
+
+          [build]
+          icon = "thunderstore/$name/icon.png"
+          readme = "thunderstore/$name/README.md"
+          outdir = "dist"
+
+          [publish]
+          repository = "https://thunderstore.io"
+          communities = ["valheim"]
+          EOF
+            sed -i 's/^          //' "tcli-$name.toml"
+            tcli publish --file "$zip" --config-path "tcli-$name.toml"
           done
