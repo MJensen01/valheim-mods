@@ -25,4 +25,4 @@ Config: `Noseferatu.SmoothServer.cfg` in the server's `BepInEx/config/`.
 
 ## Source & issues
 
-https://github.com/Noseferatu/valheim-mods — MIT licensed.
+https://github.com/MJensen01/valheim-mods — MIT licensed.

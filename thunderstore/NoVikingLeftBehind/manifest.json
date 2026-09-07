@@ -1,7 +1,7 @@
 {
   "name": "NoVikingLeftBehind",
   "version_number": "0.3.0",
-  "website_url": "https://github.com/Noseferatu/valheim-mods",
+  "website_url": "https://github.com/MJensen01/valheim-mods",
   "description": "Server-enforced QoL and catch-up mechanics: frontier-based discounts, ore regrowth, a vanguard buff, and playtime/skill catch-up. One DLL, server + client.",
   "dependencies": [
     "denikson-BepInExPack_Valheim-5.4.2333"

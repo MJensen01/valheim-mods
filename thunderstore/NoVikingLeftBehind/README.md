@@ -37,4 +37,4 @@ Console (client): `nvlb.status` prints the live config.
 
 ## Source & issues
 
-https://github.com/Noseferatu/valheim-mods — MIT licensed.
+https://github.com/MJensen01/valheim-mods — MIT licensed.
